@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // 정적 객체
+    const itsMe = {
+      name : "Jangrubin",
+      name : "rubin",
+      name : "rubinsss",
+      age : 20,
+      home : "oracle",
+      hosil : "305호",
+      sentence : "저는" + this.name + "입니다",
+      adult : function() {
+        if(itsMe.age >= 20) {
+          console.log("나는 성인이야");
+        }
+        else {
+          console.log("성인이 아니야");
+        }
+      }
+    };
+    console.log(itsMe.sentence
+);
+    itsMe.adult();
+    // 메서드
+    itsMe.myName = function() {
+      console.log("저는"+this.name+"입니다");
+    }
+
+    itsMe.myName();
+    // 동적으로 할당도 가능
+    // const isMe = {};
+    // isMe.name = "janarubin";
+    // isMe.age = 20;
+    // isMe.home = "oracle";
+    // isMe.hosil = "305호";
+    
+    // console.log(itsMe.name);
+    // console.log(itsMe.age);
+    // console.log(isMe.name);
+    // console.log(isMe.age);
+    // console.log(isMe.home);
+    // console.log(isMe.hosil);
+    console.table(itsMe);
+    itsMe.nickname = function() {
+      // console.log("내 이름은"+this.name+"이고 별명은 뭘까?");
+      this.name = "루빈짱"
+    }
+    console.table(itsMe);
+    itsMe.nickname();
+    console.table(itsMe);
+</script>
+</body>
+</html>
