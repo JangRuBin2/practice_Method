@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #menu {
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // const root = document.getElementById('root');
+    // function ulMaker() {
+    //   const ulElement = document.createElement('ul');
+    //   // 속성부여 -> id를 만들어준다 'menu'라는 이름의
+    //   ulElement.setAttribute('id','menu');
+    //   root.appendChild(ulElement);
+
+    // }
+    
+    const root = document.getElementById('root');
+
+    // 데이터 저장소
+    const ElementMaker = {
+      tagName : "",
+      setAttriName : "",
+      setAttriValue : "",
+      parent : "",
+      // 
+      maker: function() {
+      const element = document.createElement(this.tagName);
+      element.setAttribute(this.setAttriName,this.setAttriValue);
+      this.parent.appendChild(element);
+      },
+      // loop문 실행 함수 생성
+      loopFunc : function() {
+        for(let i = 0; i < 100; i ++) {
+          this.maker();
+        }
+      }
+    }
+    
+    
+   
+
+    // 리터럴 걷어내기
+    function ulMaker(tagName,setAttriName,setAttriValue,parent) {
+      const element = document.createElement(tagName);
+      // 속성부여 -> id를 만들어준다 'menu'라는 이름의
+      element.setAttribute(setAttriName,setAttriValue);
+      parent.appendChild(element);
+      
+    }
+
+    // 걷어낸 리터럴 값
+    ulMaker("ul","id","section",root);
+    for(let i=0; i<100; i++) {
+      ulMaker('header','id',`test-${i}`,root);
+      // if(ulMaker.setAttriValue[i] == ulMaker.setAttriValue[63]) {
+        
+      // }
+    }
+    root.children[65].style.width = "100";
+    
+  </script>
+</body>
+</html>
